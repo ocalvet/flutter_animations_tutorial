@@ -12,6 +12,7 @@ class _GrowingSquareState extends State<GrowingSquare>
   Animation<double> animation;
   Animation<double> rotation;
   AnimationController controller;
+  bool stop = false;
 
   initState() {
     super.initState();
@@ -44,14 +45,26 @@ class _GrowingSquareState extends State<GrowingSquare>
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(
+    return GestureDetector(
+      onTap: () {
+        this.setState(() {
+          stop = !stop;
+          stop
+              ? controller.stop()
+              : controller.status == AnimationStatus.forward
+                  ? controller.forward()
+                  : controller.reverse();
+        });
+      },
+      child: Transform.rotate(
         child: Container(
           width: animation?.value,
           height: animation?.value,
           color: Colors.green,
         ),
         angle: rotation == null ? 0 : (rotation.value) * pi / 180,
-      );
+      ),
+    );
   }
 
   dispose() {
