@@ -1,5 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class GrowingSquare extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class GrowingSquare extends StatefulWidget {
 class _GrowingSquareState extends State<GrowingSquare>
     with SingleTickerProviderStateMixin {
   Animation<double> animation;
+  Animation<double> rotation;
   AnimationController controller;
 
   initState() {
@@ -18,7 +20,11 @@ class _GrowingSquareState extends State<GrowingSquare>
       duration: const Duration(milliseconds: 3000),
       vsync: this,
     );
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
+    rotation = Tween(begin: 0.0, end: 360.0).animate(controller)
+      ..addListener(() {
+        print('rot:${rotation.value}');
+      });
+    animation = Tween(begin: 0.0, end: 360.0).animate(controller)
       ..addListener(() {
         setState(() {
           // the state that has changed here is the animation object’s value
@@ -33,16 +39,19 @@ class _GrowingSquareState extends State<GrowingSquare>
           controller.forward();
         }
       });
-      controller.forward();
+    controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: animation?.value,
-      height: animation?.value,
-      color: Colors.green,
-    );
+    return Transform.rotate(
+        child: Container(
+          width: animation?.value,
+          height: animation?.value,
+          color: Colors.green,
+        ),
+        angle: rotation == null ? 0 : (rotation.value) * pi / 180,
+      );
   }
 
   dispose() {
