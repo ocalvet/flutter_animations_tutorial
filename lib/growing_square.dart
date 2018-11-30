@@ -17,7 +17,7 @@ class _GrowingSquareState extends State<GrowingSquare>
   initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
     rotation = Tween(begin: 0.0, end: 360.0).animate(controller)
