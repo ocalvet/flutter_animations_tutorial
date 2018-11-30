@@ -15,7 +15,7 @@ class _GrowingSquareState extends State<GrowingSquare>
     super.initState();
     print('setting state');
     controller = AnimationController(
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 3000),
       vsync: this,
     );
     animation = Tween(begin: 0.0, end: 300.0).animate(controller)
@@ -24,6 +24,14 @@ class _GrowingSquareState extends State<GrowingSquare>
           // the state that has changed here is the animation object’s value
           print(animation.value);
         });
+      })
+      ..addStatusListener((state) {
+        print("$state");
+        if (AnimationStatus.completed == state) {
+          controller.reverse();
+        } else if (AnimationStatus.dismissed == state) {
+          controller.forward();
+        }
       });
       controller.forward();
   }
