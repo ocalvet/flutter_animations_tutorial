@@ -20,20 +20,8 @@ class _GrowingSquareState extends State<GrowingSquare>
       duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
-    rotation = Tween(begin: 0.0, end: 360.0).animate(controller)
-      ..addListener(() {
-        // Listen to animation changes in value here
-        // print('rot:${rotation.value}');
-        // print('width:${animation.value}');
-        // print('height:${animation.value}');
-      });
+    rotation = Tween(begin: 0.0, end: 360.0).animate(controller);
     animation = Tween(begin: 0.0, end: 360.0).animate(controller)
-      ..addListener(() {
-        setState(() {
-          // the state that has changed here is the animation object’s value
-          print(animation.value);
-        });
-      })
       ..addStatusListener((state) {
         if (AnimationStatus.completed == state) {
           controller.reverse();
