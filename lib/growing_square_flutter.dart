@@ -35,7 +35,7 @@ class _StateFlutterAnimationsTester extends State<FlutterAnimationsTester>
       );
       _slideAnmation = Tween(
         begin: Offset(0, 0),
-        end: Offset(3, 1),
+        end: Offset(0.2, 1),
       ).animate(_mainAnimation);
       _animationController.forward();
     });
