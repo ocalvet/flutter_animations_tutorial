@@ -1,8 +1,7 @@
 # flutter_animations_tutorial
 
-A new Flutter project.
+This project is created to explorer different animtions in fluttre.
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+To get started make sure to follow the instructions on the flutter page. Once your environment is set up run `$ flutter run`
