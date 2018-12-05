@@ -83,7 +83,7 @@ class StaggerAnimation extends StatelessWidget {
       CurvedAnimation(
         parent: controller,
         curve: Interval(
-          0.0, 0.100,
+          0.0, 1,
           curve: Curves.ease,
         ),
       ),
@@ -96,7 +96,7 @@ class StaggerAnimation extends StatelessWidget {
       CurvedAnimation(
         parent: controller,
         curve: Interval(
-          0.125, 0.250,
+          0.0, 1,
           curve: Curves.ease,
         ),
       ),
