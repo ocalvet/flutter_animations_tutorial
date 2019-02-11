@@ -4,16 +4,13 @@ import 'package:flutter_animations_tutorial/rotating_square.dart';
 class AnimationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // return Center(
-    //   child: FlutterAnimationsTester(),
-    // );
     return MaterialApp(
-      // home: StaggerAnimationWidget(),
+      debugShowCheckedModeBanner: false,
       home: Stack(
         children: [
           Positioned(
-            left: 20,
-            top: 50,
+            left: 120,
+            top: 150,
             child: RotatingSquare(),
           )
         ],

@@ -164,9 +164,6 @@ class StaggerAnimation extends StatelessWidget {
   final Animation<BorderRadius> borderRadius;
   final Animation<Color> color;
 
-  // This function is called each time the controller "ticks" a new frame.
-  // When it runs, all of the animation's values will have been
-  // updated to reflect the controller's current value.
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Container(
       padding: padding.value,
