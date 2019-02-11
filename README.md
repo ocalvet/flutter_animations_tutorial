@@ -1,7 +1,3 @@
-# flutter_animations_tutorial
+# Flutter Animation Tutorial
 
-This project is created to explorer different animtions in fluttre.
-
-## Getting Started
-
-To get started make sure to follow the instructions on the flutter page. Once your environment is set up run `$ flutter run`
+This project explores how to use animations in flutter
