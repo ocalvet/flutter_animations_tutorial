@@ -18,9 +18,6 @@ class RotaringSquareState extends State<RotatingSquare>
       duration: Duration(milliseconds: 1500),
     );
     controller.repeat();
-    controller.addListener(() {
-      print(controller.value);
-    });
   }
 
   @override
@@ -28,20 +25,24 @@ class RotaringSquareState extends State<RotatingSquare>
     return ControlledRotatingWidget(
       controller: this.controller,
       child: Container(
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 200,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.blueGrey,
-          border: Border.all(width: 5, color: Colors.redAccent),
+          border: Border.all(
+            width: 5,
+            color: Colors.redAccent,
+          ),
         ),
         child: Center(
           child: Text(
             'Hello',
             textDirection: TextDirection.ltr,
             style: TextStyle(
-              fontSize: 22,
-              color: Colors.green,
+              fontSize: 52,
+              color: Colors.black54,
+              decoration: TextDecoration.none,
             ),
           ),
         ),
