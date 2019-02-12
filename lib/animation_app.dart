@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_tutorial/rotating_square.dart';
+import 'package:flutter_animations_tutorial/rotating_text/rotating_square.dart';
 
 class AnimationApp extends StatelessWidget {
   @override
