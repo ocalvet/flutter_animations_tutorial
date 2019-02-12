@@ -3,6 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RotatingSquare extends StatefulWidget {
+  final String displayText;
+
+  const RotatingSquare({Key key, this.displayText}) : super(key: key);
+
   @override
   RotaringSquareState createState() => RotaringSquareState();
 }
@@ -22,6 +26,7 @@ class RotaringSquareState extends State<RotatingSquare>
 
   @override
   Widget build(BuildContext context) {
+    String text = widget?.displayText ?? "Empty";
     return ControlledRotatingWidget(
       controller: this.controller,
       child: Container(
@@ -37,7 +42,7 @@ class RotaringSquareState extends State<RotatingSquare>
         ),
         child: Center(
           child: Text(
-            'Hello',
+            text,
             textDirection: TextDirection.ltr,
             style: TextStyle(
               fontSize: 52,
